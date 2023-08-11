@@ -17,9 +17,9 @@ const Button: React.FunctionComponent<ButtonProps> = (props) => {
   console.log(props.onClick);
 
   const onClick = (e: React.MouseEvent) => {
-    console.log(e.target);
-
-    props.onClick && props.onClick.call(e.target, e);
+    // console.log(e.target);
+    // && props.onClick.call(e.target, e);
+    props.onClick && props.onClick(e);
   };
   const buttonClassName = classes('x-button', type);
 

@@ -7,15 +7,15 @@ import React from 'react';
 import { Button } from 'react-mylib';
 
 export default () => {
-  const enterLoading = (index) => {
-    console.log(index);
+  const enterLoading = (e) => {
+    console.log(e.target);
   };
   return (
     <div>
       <Button>default</Button>
       <br />
       <Button type="primary"> primary</Button>
-      <Button onClick={(e) => enterLoading(e)}> click me</Button>
+      <Button onClick={enterLoading}> click me</Button>
     </div>
   );
 };
