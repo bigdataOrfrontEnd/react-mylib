@@ -13,19 +13,26 @@ export type ButtonProps = {
   ghost?: boolean;
 };
 const Button: React.FunctionComponent<ButtonProps> = (props) => {
-  const { type } = props;
-  console.log(props.onClick);
+  const { type, className, ...rest } = props;
+  console.log(rest);
 
+  const disabled = props.disabled ? 'disabled' : undefined;
+  const ghost = props.ghost ? 'ghost' : undefined;
+  const size = props.size ? props.size : 'midlle';
   const onClick = (e: React.MouseEvent) => {
+    // preventDefault() 方法告诉用户代理：如果此事件没有被显式处理，
+    // 它默认的动作也不应该照常执行。此事件还是继续传播，
+    // 除非碰到事件监听器调用 stopPropagation() 或 stopImmediatePropagation()，才停止传播
+    if (disabled) return e.preventDefault();
     // console.log(e.target);
     // && props.onClick.call(e.target, e);
     props.onClick && props.onClick(e);
   };
-  const buttonClassName = classes('x-button', type);
+  const buttonClassName = classes('x-button', type, disabled, ghost, size);
 
   return (
     <Fragment>
-      <button className={buttonClassName} onClick={onClick}>
+      <button className={buttonClassName} onClick={onClick} {...rest}>
         <span className="text">{props.children}</span>
       </button>
     </Fragment>
@@ -33,6 +40,8 @@ const Button: React.FunctionComponent<ButtonProps> = (props) => {
 };
 Button.defaultProps = {
   type: 'default',
+  ghost: false,
+  size: 'middle',
 };
 
 export default Button;

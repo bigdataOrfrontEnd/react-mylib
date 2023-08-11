@@ -27,4 +27,57 @@
       border-color: rgba(@main-color, 0.85);
     }
   }
+  &.dashed {
+    border-style: dashed;
+    &:hover {
+      color: @main-color;
+      border-color: @main-color;
+      fill: @main-color;
+    }
+  }
+  &.danger {
+    color: #fff;
+    background-color: red;
+    fill: #fff;
+    &:hover {
+      background-color: rgba(red, 0.75);
+      border-color: rgba(red, 0.75);
+    }
+  }
+  &.disabled,
+  &.disabled:hover {
+    color: #00000040;
+    background: #f5f5f5;
+    border-color: #d9d9d9;
+    cursor: not-allowed;
+    fill: #00000040;
+  }
+  &.default.ghost {
+    color: #fff;
+    background-color: transparent;
+    border-color: #fff;
+    fill: #fff;
+    &:hover {
+      color: @main-color;
+      border-color: @main-color;
+      fill: @main-color;
+    }
+  }
+  &.primary.ghost {
+    color: @main-color;
+    border-color: @main-color;
+    &:hover {
+      color: rgba(#fff, 0.75);
+      border-color: rgba(#fff, 0.75);
+    }
+  }
+  &.large {
+    padding: 6px 18px;
+    line-height: 28px;
+  }
+  &.small {
+    padding: 2px 14px;
+    font-size: 12px;
+    line-height: 24px;
+  }
 }
