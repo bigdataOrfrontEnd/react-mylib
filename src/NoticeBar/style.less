@@ -1,0 +1,22 @@
+// 整体颜色
+@notice-bar-fill: #fefcec;
+//高度
+@notice-bar-height: 36px;
+//字体颜色
+@notice-bar-color: #f76a24;
+@font-size-base: 14px;
+@h-spacing-lg: 15px;
+.prefixCls {
+  display: flex;
+  height: @notice-bar-height;
+  overflow: hidden;
+  color: @notice-bar-color;
+  font-size: @font-size-base;
+  line-height: @notice-bar-height;
+  background-color: @notice-bar-fill;
+  .content {
+    flex: 1;
+    width: 100%;
+    margin: auto @h-spacing-lg;
+  }
+}

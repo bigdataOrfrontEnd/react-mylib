@@ -3,7 +3,7 @@
   "name": "react-mylib",
   "version": "1.0.8",
   "scripts": {
-    "start": "dumi dev",
+    "start": "dumi dev --host=192.168.31.251",
     "docs:build": "dumi build",
     "docs:deploy": "gh-pages -d docs-dist",
     "build": "father-build",
@@ -28,6 +28,8 @@
   },
   "dependencies": {
     "@types/styled-components": "^5.1.26",
+    "antd-mobile": "^5.32.0",
+    "antd-mobile-icons": "^0.3.0",
     "react": "^16.12.0 || ^17.0.0",
     "styled-components": "^5.0.0"
   },
